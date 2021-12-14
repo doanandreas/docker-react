@@ -9,9 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: ls
-      # - name: Build dev image
-      #   run: docker build -t doanandreas/docker-react -f Dockerfile.dev .
-      # - name: Run tests
-      #   run: docker run doanandreas/docker-react npm test -- --coverage
+      - name: Build dev image
+        run: docker build -t doanandreas/docker-react -f Dockerfile.dev .
+      - name: Run tests
+        run: docker run doanandreas/docker-react npm test -- --coverage
         
