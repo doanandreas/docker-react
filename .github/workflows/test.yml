@@ -1,0 +1,15 @@
+name: test react
+
+on: 
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build dev image
+        run: docker build -t doanandreas/docker-react -f Dockerfile.dev .
+      - name: Run tests
+        run: docker run doanandreas/docker-react npm test -- --coverage
+        
