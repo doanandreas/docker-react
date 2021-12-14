@@ -12,5 +12,5 @@ jobs:
       - name: Build dev image
         run: docker build -t doanandreas/docker-react -f Dockerfile.dev .
       - name: Run tests
-        run: docker run doanandreas/docker-react CI=true npm run test -- --coverage --ci
+        run: docker run doanandreas/docker-react npm run test -- --coverage --ci
         
